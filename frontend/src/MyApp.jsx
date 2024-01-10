@@ -1,16 +1,20 @@
 import React from "react";
-import {Navbar} from "./components/Navbar";
+import { Navbar } from "./components/Navbar";
 import Todocom from "./components/Todocom";
 
 const MyApp = () => {
-  titles=["hello","hello","hello"]
-  let i=1
+  const titles = [
+    { id: 1, text: "hello1" },
+    { id: 2, text: "hello2" },
+    { id: 3, text: "hello3" },
+  ];
+  let i=1;
+  
   return (
     <>
       <Navbar />
-      
-      {titles.map((title, index) => (
-        <Todocom key={index} title={title} sno={i++}/>
+      {titles.map((title) => (
+        <Todocom key={title.id} title={title.text} sno={i++}/>
       ))}
     </>
   );
